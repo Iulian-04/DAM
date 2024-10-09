@@ -1,0 +1,5 @@
+# Escluimos los ejucatables de C
+*.out
+
+# Excluir los de VIM
+*.swp
