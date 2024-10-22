@@ -3,3 +3,6 @@
 
 # Excluir los de VIM
 *.swp
+*.swo
+*.swn
+.*.c.sw*
