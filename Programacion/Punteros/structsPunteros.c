@@ -36,7 +36,8 @@ void inicializar( Estudiante*estudiante_a_rellenar, char * nombre,int edad, floa
 	estudiante_a_rellenar ->edad = edad;
 	estudiante_a_rellenar ->nota = nota;
 	//estudiante_a_rellenar.nombre = nombre;
-	strcopy(estudiante_a_rellenar -> nombre,nombre);
+	strcopy(estudiante_a_rellenar) ->nombre,nombre;
+
 
 	//Estudiante * estudiante_nuevo = malloc //memoria dinamica
 			
@@ -46,12 +47,20 @@ void inicializar( Estudiante*estudiante_a_rellenar, char * nombre,int edad, floa
 	
 	//No se puede rellenar el dato porque no he reservado memoria del puntero
 	
+//Tiene que recibir un puntero a estudiante porque va modificar la variable la edad del estudinte
+//No es necesarioo un valor de retorno
+void cumpleanios(Estudiante *cumpleanero){
+	cumpleanero->edad++;
+
+	
+}
 
 
 
 int main(){
 
 	Estudiante listado[MAX_ESTUDIANTE]; //Aqui se reserva la memoria para los estudiantes.Los 560 bytes
+	
 	int num_estudiantes;
 
 	int edad;
@@ -77,6 +86,13 @@ int main(){
 
 	inicializar(&listado[i],/*direccion de memoria estudiante*/nombre,edad,nota);
 	//inicializar(listado + i,/*direccion de memoria estudiantenombre,edad,nota);
+	
+
+	//El estudiante de la primera posicion ha cumplido años
+	printf("Edad antigua: %s: %d\n",listado[0].nombre,listado[0].edad);
+	cumpleanios(&listado[0]);//Dir de memoria
+	//cumpleaños(listado)
+	printf("Edad nueva: %d\n",listado[0].edad);
 
 	}
 	return 0;
