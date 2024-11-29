@@ -8,7 +8,7 @@
 //Definimos las constantes
 #define MAX_NOMBRE 20
 #define MAX_ESTUDIANTE 20
-
+#define MAX_BUFFER 200
 
 
 typedef struct {
@@ -56,6 +56,38 @@ void cumpleanios(Estudiante *cumpleanero){
 }
 
 
+//Vamos a crear una funcion para imprimir un estudiante.lo vamos a hacer de 2 formas
+
+//Recibe un etudiante y muestra por pantalla todos sus datos
+void imprimirEstudinate(const Estudiante * estudiante_a_imprimir) {
+
+printf("Nombre: %s\n",estudiante_a_imprimir->nombre);
+printf("Edad: %d\n",estudiante_a_imprimir->edad);
+printf("Nota: %f\n",estudiante_a_imprimir->nota);
+}
+
+//Una funcion de imprimir sin los printf
+//Convertir un estudiante a una cadena de texto
+char * estudianteTostring( const Estudiante * datos){
+	char retval[MAX_BUFFER];
+
+//snprintf (donde,cuanto , el que)[Lo que harias con un printf])
+// quiero que se una varaible del main que aqui se utiliza y aqui se rellena
+// Da WARNING  porque la variable deja de existir cuando acaba la funcion
+	snprintf(retval,MAX_BUFFER,"El estudiante %s de %d años ha salido un %f",datos ->nombre,datos->edad,datos->nota);
+
+	return retval;	
+}
+
+char * estudianteTostring( const Estudiante * datos,char *retval){
+	
+
+
+
+
+
+
+
 
 int main(){
 
@@ -93,7 +125,15 @@ int main(){
 	cumpleanios(&listado[0]);//Dir de memoria
 	//cumpleaños(listado)
 	printf("Edad nueva: %d\n",listado[0].edad);
+	printf("Edad nueva: %d\n",listado->edad);
+	printf("Edad nueva: %d\n",(*listado).edad);
 
-	}
+
+	imprimirEstudiante(&listado[0]);
+	char StringARellenar[MAX_BUFFER];
+	estudianteTostring(&listado[0],StringARellenar);
+	printf("%s\n",StringARellenar);
+
+	
 	return 0;
 }
