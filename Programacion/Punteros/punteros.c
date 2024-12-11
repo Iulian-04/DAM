@@ -1,35 +1,29 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int main(){
+int main(int argc ,char ** argc){
 
-	int arr[5] = {1,2,3,4,5};
+		Book books [SIZE_CATALOGS] = {
 
-	int numeroElemntos= sizeof(arr)/sizeof(int);	    
+		}:
 
-
-
-	//recorrer el array y sumarlo
-	for(int * p = arr; *p<=5; p++){
-		printf(" %d\n",*p);
-
-	}
-
-	printf("Sizeof arr: %ld\n",sizeof(arr));
-	printf("Sizeof int: %ld\n",sizeof(int));
-	printf("Elementos del array :%ld\n",sizeof(arr)/sizeof(int));
-	
+		printf("Lista de argumentos :\n");
+		for(int i = 0; i<argc; i++){
+				printf("\t Argumento %d: %s\n",i,argv[i]);
 
 
+		if (argc == 1){
+			//Haz lo que hacia antes
+		}
 
-	char palabra[20] = "gratis";
-
-	for(char * l= palabra; *l != '\0'; l++)
-		printf("%c\n",*l);
-
-
-
-	return 0;
+		if (argc >1){
+			//llamar a mostrar a todo
+		}
 
 
 }
+
+return 0;
+
+}
+

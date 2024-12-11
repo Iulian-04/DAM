@@ -36,7 +36,7 @@ void inicializar( Estudiante*estudiante_a_rellenar, char * nombre,int edad, floa
 	estudiante_a_rellenar ->edad = edad;
 	estudiante_a_rellenar ->nota = nota;
 	//estudiante_a_rellenar.nombre = nombre;
-	strcopy(estudiante_a_rellenar) ->nombre,nombre;
+	strcpy(estudiante_a_rellenar ->nombre,nombre);
 
 
 	//Estudiante * estudiante_nuevo = malloc //memoria dinamica
