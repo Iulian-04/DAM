@@ -7,6 +7,7 @@ int main() {
         printf("Error: no se pudo asignar memoria.\n");
         return 1;
     }
+
     *p = 42; // Usamos la memoria
     printf("El valor es: %d\n", *p);
     free(p); // Liberamos la memoria reservada
